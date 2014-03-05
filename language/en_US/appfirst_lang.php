@@ -1,5 +1,5 @@
 <?php
-$lang['appfirst_app_description'] = 'Cloud-Based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.';
+$lang['appfirst_app_description'] = 'Cloud-based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.';
 $lang['appfirst_app_name'] = 'AppFirst System Monitor';
 $lang['appfirst_app_tooltip'] = 'To login to the cloud service, click <a href="https://wwws.appfirst.com/accounts/login/" target="_blank">here</a>.';
 $lang['appfirst_account'] = 'Account Information';
