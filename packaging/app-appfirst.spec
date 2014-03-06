@@ -35,7 +35,7 @@ This package provides the core API and libraries.
 %install
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/appfirst
 cp -r * %{buildroot}/usr/clearos/apps/appfirst/
-
+rm -f %{buildroot}/usr/clearos/apps/appfirst/README.md
 install -D -m 0644 packaging/afcollector.php %{buildroot}/var/clearos/base/daemon/afcollector.php
 install -D -m 0640 packaging/appfirst.conf %{buildroot}/etc/clearos/appfirst.conf
 
@@ -74,6 +74,7 @@ exit 0
 
 %files core
 %defattr(-,root,root)
+%doc README.md
 %exclude /usr/clearos/apps/appfirst/packaging
 %dir /usr/clearos/apps/appfirst
 /usr/clearos/apps/appfirst/deploy
