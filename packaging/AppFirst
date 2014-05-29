@@ -1,0 +1,14 @@
+<configuration>
+   Enabled True
+   CollectPeriod 20
+   URL http://backend.appfirst.com/SaveData.py/save_data
+   Tenant undefined
+   Profile 0
+   DataDir /opt/AppFirst/data
+   Include 
+   Exclude 
+   DiskSpace 512
+   MaxPaths 1024
+   NagiosConfig /usr/share/appfirst/plugins/etc/nrpe_appfirst.cfg
+   NagiosFreq 300
+</configuration>

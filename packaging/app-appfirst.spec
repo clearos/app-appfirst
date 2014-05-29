@@ -1,7 +1,7 @@
 
 Name: app-appfirst
 Epoch: 1
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{dist}
 Summary: AppFirst System Monitor
 License: GPLv3
@@ -14,7 +14,7 @@ Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 
 %description
-Cloud-Based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.
+Cloud-based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.
 
 %package core
 Summary: AppFirst System Monitor - Core
@@ -24,7 +24,7 @@ Requires: app-base-core
 Requires: appfirst
 
 %description core
-Cloud-Based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.
+Cloud-based network and server monitoring service delivers unified visibility from many data sources.  Custom dashboards, historical datasets, data correlation and the ability to easily graph data provides administrators with an essential tool to proactively manage the system.
 
 This package provides the core API and libraries.
 
@@ -36,6 +36,7 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/appfirst
 cp -r * %{buildroot}/usr/clearos/apps/appfirst/
 rm -f %{buildroot}/usr/clearos/apps/appfirst/README.md
+install -D -m 0640 packaging/AppFirst %{buildroot}/etc/AppFirst
 install -D -m 0644 packaging/afcollector.php %{buildroot}/var/clearos/base/daemon/afcollector.php
 install -D -m 0640 packaging/appfirst.conf %{buildroot}/etc/clearos/appfirst.conf
 
@@ -80,5 +81,6 @@ exit 0
 /usr/clearos/apps/appfirst/deploy
 /usr/clearos/apps/appfirst/language
 /usr/clearos/apps/appfirst/libraries
+%config(noreplace) /etc/AppFirst
 /var/clearos/base/daemon/afcollector.php
 %attr(0640,webconfig,webconfig) %config(noreplace) /etc/clearos/appfirst.conf

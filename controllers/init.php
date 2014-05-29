@@ -68,16 +68,5 @@ class Init extends ClearOS_Controller
             $this->page->view_exception($e);
             return;
         }
-
-        // Load view data
-        //---------------
-
-        $data = array();
-
-        // Load views
-        //-----------
-
-        $this->page->view_form('appfirst/init', $data, lang('appfirst_app_name'));
-
     }
 }

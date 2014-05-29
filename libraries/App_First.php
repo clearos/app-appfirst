@@ -109,7 +109,7 @@ class App_First extends Daemon
         parent::__construct('afcollector');
     }
 
-    /** Has the server been initialized with the AppFirst cloud service.
+    /** Has the user set account credentials matching the AppFirst cloud service.
      *
      * @return void
      * @throws Engine_Exception
@@ -167,11 +167,16 @@ class App_First extends Daemon
             if (! $this->loaded)
                 $this->_load();
 
-            if ($this->config_engine['configuration']['Tenant'] == 1) {
-                $response = json_decode($this->_request('user_profiles/'));
-                $tenant_id = $response->data[0]->tenant_id;
-                if (is_numeric($tenant_id)) {
-                    $this->_set_engine_parameter('configuration', 'Tenant', $tenant_id);
+            if (!is_numeric($this->config_engine['configuration']['Tenant'])) {
+                // Don't send API request unless account is populated
+                if ($this->has_account_credentials()) {
+                    $response = json_decode($this->_request('user_profiles/'));
+                    $tenant_id = $response->data[0]->tenant_id;
+                    if (is_numeric($tenant_id)) {
+                        $this->_set_engine_parameter('configuration', 'Tenant', $tenant_id);
+                    } else {
+                        return FALSE;
+                    }
                 } else {
                     return FALSE;
                 }

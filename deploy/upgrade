@@ -1,4 +1,10 @@
 #!/bin/sh
+TENTANT=`grep "Tenant\s*1$" /etc/AppFirst`
 
+# Check if Tenant ID = 1 (AppFirst)...set to undefined and stop service
+if [ -z "$TENANT" ]; then
+    sed -i -e 's/[[:space:]]*Tenant[[:space:]]*1$/   Tenant undefined/' /etc/AppFirst
+    /sbin/service afcollector stop
+    /sbin/chkconfig afcollector off
+fi
 # Add sudoers entries
-#--------------------

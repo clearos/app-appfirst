@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'appfirst';
-$app['version'] = '1.0.1';
+$app['version'] = '1.0.2';
 $app['release'] = '1';
 $app['vendor'] = 'ClearCenter <developer@clearcenter.com>';
 $app['packager'] = 'ClearCenter <developer@clearcenter.com>';
@@ -31,11 +31,19 @@ $app['core_requires'] = array(
 );
 
 $app['core_file_manifest'] = array(
-      'appfirst.conf' => array(
+    'appfirst.conf' => array(
         'target' => '/etc/clearos/appfirst.conf',
         'mode' => '0640',
         'owner' => 'webconfig',
         'group' => 'webconfig',
+        'config' => TRUE,
+        'config_params' => 'noreplace'
+    ),
+    'AppFirst' => array(
+        'target' => '/etc/AppFirst',
+        'mode' => '0640',
+        'owner' => 'root',
+        'group' => 'root',
         'config' => TRUE,
         'config_params' => 'noreplace'
     ),
