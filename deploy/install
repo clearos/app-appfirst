@@ -1,0 +1,5 @@
+#!/bin/sh
+
+logger -p local6.notice -t installer "app-appfirst-core - stopping collector on install"
+/etc/rc.d/init.d/afcollector stop
+/sbin/chkconfig afcollector off

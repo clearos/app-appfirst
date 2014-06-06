@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'appfirst';
-$app['version'] = '1.0.2';
+$app['version'] = '1.0.3';
 $app['release'] = '1';
 $app['vendor'] = 'ClearCenter <developer@clearcenter.com>';
 $app['packager'] = 'ClearCenter <developer@clearcenter.com>';
