@@ -1,7 +1,7 @@
 
 Name: app-appfirst
 Epoch: 1
-Version: 1.0.3
+Version: 1.6.5
 Release: 1%{dist}
 Summary: AppFirst System Monitor
 License: GPLv3
