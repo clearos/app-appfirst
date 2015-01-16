@@ -20,7 +20,7 @@ $app['tooltip'] = lang('appfirst_app_tooltip');
 
 $app['name'] = lang('appfirst_app_name');
 $app['category'] = lang('base_category_cloud');
-$app['subcategory'] = lang('base_subcategory_monitoring');
+$app['subcategory'] = lang('base_subcategory_services');
 
 /////////////////////////////////////////////////////////////////////////////
 // Packaging
